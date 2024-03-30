@@ -35,16 +35,21 @@ void deleteAnimalClass( const AAnimal** animals ) {
 	delete [] animals;
 }
 
-void testCopyConstructor() {
+void testCopyConstructorInAnimalClass() {
+	testTitle("Animal Copy Constructor");
 	AAnimal* cat = new Cat();
-	AAnimal* tmp_cat(cat);
+	AAnimal* tmpCat(cat);
 	delete cat;
+	std::cout << "tmp cat: " << tmpCat->getType() << std::endl;
 }
 
-void testAssigntConstructor() {
-	AAnimal* cat = new Cat();
-	AAnimal* tmp_cat(cat);
+void testCopyAssignmentOperatorInAnimalClass() {
+	testTitle("Animal Copy Assignment Operator");
+	Cat* cat = new Cat();
+	Cat* tmpCat = new Cat();
+	*tmpCat = *cat;
 	delete cat;
+	delete tmpCat;
 }
 
 void testAnimalClass() {
@@ -55,4 +60,6 @@ void testAnimalClass() {
 		animals[i]->makeSound();
 	}
 	deleteAnimalClass(animals);
+	testCopyConstructorInAnimalClass();
+	testCopyAssignmentOperatorInAnimalClass();
 }

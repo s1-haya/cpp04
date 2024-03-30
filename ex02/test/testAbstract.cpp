@@ -13,15 +13,13 @@ test:
 
 void testAbstract() {
 	testTitle("Abstract");
-	// error: allocating an object of abstract class type 'AAnimal'
-	// AAnimal* animal = new AAnimal();
 	// error: return type 'AAnimal' is an abstract class
 	// AAnimal animal();
 	// static_cast<AAnimal>(cat);
 	// error: allocating an object of abstract class type 'AAnimal'
 	// AAnimal* animal = new AAnimal();
-	// error: redefinition of 'cat' with a different type: 'AAnimal' vs 'Cat'
-	// AAnimal cat = new Cat();
+	// error: variable type 'AAnimal' is an abstract class
+	// AAnimal tmp = new Cat();
 	Cat cat;
 	Dog dog;
 

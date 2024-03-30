@@ -3,8 +3,9 @@
 
 void testTitle(const std::string title);
 void testJudgeString(const std::string& expected, const std::string& output);
-void testCopyConstructor();
-void testCopyAssignmentOperator();
+void testCopyConstructorInBrainClass();
+void testCopyAssignmentOperatorInBrainClass();
+
 /*
 test:
 Brain Class
@@ -25,11 +26,11 @@ void testBrainClass() {
 	brain.setIdea("\033[34mjay z\033[0m", 100);
 	brain.setIdea("\033[34mjay z\033[0m", -1);
 	std::cout << brain << std::endl;
-	testCopyConstructor();
-	testCopyAssignmentOperator();
+	testCopyConstructorInBrainClass();
+	testCopyAssignmentOperatorInBrainClass();
 }
 
-void testCopyConstructor() {
+void testCopyConstructorInBrainClass() {
 	testTitle("Brain Copy Constructor");
 	Brain brain;
 	brain.setIdea("\033[31mj cole\033[0m", 0);
@@ -38,7 +39,7 @@ void testCopyConstructor() {
 	std::cout << copyBrain.getIdea(99) << std::endl;
 }
 
-void testCopyAssignmentOperator(){
+void testCopyAssignmentOperatorInBrainClass(){
 	testTitle("Brain Copy Assignment Operator");
 	Brain brain;
 	brain.setIdea("\033[31mj cole\033[0m", 0);

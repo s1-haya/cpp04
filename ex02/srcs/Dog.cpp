@@ -5,16 +5,14 @@ Dog::Dog() : AAnimal(), brain_(new Brain()) {
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog( const Dog& other ) : AAnimal(), brain_(new Brain(*other.brain_)) {
-	this->AAnimal::operator=(other);
+Dog::Dog( const Dog& other ) : AAnimal(other), brain_(new Brain(*other.brain_)) {
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator=( const Dog& other ) {
 	if (this != &other) {
-		this->AAnimal::operator=(other);
-		delete this->brain_;
-		this->brain_ = new Brain(*other.brain_);
+		AAnimal::operator=(other);
+		*this->brain_ = *other.brain_;
 	}
 	std::cout << "Dog copy assignment operator called" << std::endl; 
 	return (*this);

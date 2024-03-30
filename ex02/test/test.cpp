@@ -5,8 +5,8 @@ void testAnimalClass();
 void testBrainClass();
 
 void runTest() {
-	// testAbstract();
+	testAbstract();
 	testAnimalClass();
-	// testBrainClass();
+	testBrainClass();
 	std::system("leaks -q polymorphism");
 }
