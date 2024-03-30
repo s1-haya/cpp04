@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal() {
+Cat::Cat() : Animal(), brain_(new Brain()) {
 	this->type_ = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;
 }
@@ -10,12 +10,16 @@ Cat::Cat( const Cat& other ) : Animal(other) {
 }
 
 Cat& Cat::operator=( const Cat& other ) {
-	Animal::operator=(other);
 	std::cout << "Cat copy assignment operator called" << std::endl; 
+	if (this != &other) {
+		Animal::operator=(other);
+		delete o
+	}
 	return (*this);
 }
 
 Cat::~Cat() {
+	delete this->brain_;
 	std::cout << "Cat destructor called" << std::endl;
 }
 

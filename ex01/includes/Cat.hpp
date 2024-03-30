@@ -1,9 +1,12 @@
-#ifndef EX00_CAT_HPP_
-#define EX00_CAT_HPP_
+#ifndef EX01_CAT_HPP_
+#define EX01_CAT_HPP_
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat: public Animal{
+private:
+	Brain* brain_;
 public:
 	Cat();
 	Cat( const Cat& other );

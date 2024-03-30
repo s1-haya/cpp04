@@ -1,5 +1,5 @@
-#ifndef EX00_ANIMAL_HPP_
-#define EX00_ANIMAL_HPP_
+#ifndef EX01_ANIMAL_HPP_
+#define EX01_ANIMAL_HPP_
 
 #include <iostream>
 

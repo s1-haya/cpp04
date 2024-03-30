@@ -2,6 +2,8 @@ void runTest();
 
 int main(void)
 {
-	runTest();
+	#ifdef DEBUG
+		runTest();
+	#endif
 	return (0);
 }

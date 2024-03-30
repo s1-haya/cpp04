@@ -1,21 +1,20 @@
-NAME := ./practice_polymorphism
+NAME := ./animal
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -MMD -MP -Wshadow
 # CXXFLAGS += -pedantic-errors
 
 SRCS_DIR := srcs
 SRCS := main.cpp\
-		$(SRCS_DIR)/Animal.cpp\
+		$(SRCS_DIR)/AAnimal.cpp\
 		$(SRCS_DIR)/Cat.cpp\
 		$(SRCS_DIR)/Dog.cpp\
+		$(SRCS_DIR)/Brain.cpp\
 		$(SRCS_DIR)/WrongAnimal.cpp\
 		$(SRCS_DIR)/WrongCat.cpp\
 
 TEST_DIR := test
 SRCS += $(TEST_DIR)/test.cpp\
-		$(TEST_DIR)/testTitle.cpp\
-		$(TEST_DIR)/testCorrectClass.cpp\
-		$(TEST_DIR)/testWrongClass.cpp\
+		$(TEST_DIR)/testAbstract.cpp\
 
 OBJS_DIR := objs
 OBJS := $(patsubst %.cpp, $(OBJS_DIR)/%.o, $(SRCS))
@@ -42,5 +41,8 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+debug: CXXFLAGS += -DDEBUG
+debug: re
 
 -include $(DEPS)
