@@ -1,4 +1,4 @@
-NAME := ./animal
+NAME := ./practice_interface
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -MMD -MP -Wshadow
 # CXXFLAGS += -pedantic-errors
@@ -6,15 +6,23 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -MMD -MP -Wshadow
 SRCS_DIR := srcs
 SRCS := main.cpp\
 		$(SRCS_DIR)/AAnimal.cpp\
+		$(SRCS_DIR)/AMateria.cpp\
+		$(SRCS_DIR)/MateriaSource.cpp\
+		$(SRCS_DIR)/Character.cpp\
 		$(SRCS_DIR)/Cat.cpp\
 		$(SRCS_DIR)/Dog.cpp\
+		$(SRCS_DIR)/Ice.cpp\
+		$(SRCS_DIR)/Cure.cpp\
 		$(SRCS_DIR)/Brain.cpp\
 		$(SRCS_DIR)/WrongAnimal.cpp\
 		$(SRCS_DIR)/WrongCat.cpp\
 
 TEST_DIR := test
 SRCS += $(TEST_DIR)/test.cpp\
-		$(TEST_DIR)/testAbstract.cpp\
+		$(TEST_DIR)/testTitle.cpp\
+		$(TEST_DIR)/testCharacter.cpp\
+		$(TEST_DIR)/testMateriaBehavior.cpp\
+		$(TEST_DIR)/testMateriaSource.cpp\
 
 OBJS_DIR := objs
 OBJS := $(patsubst %.cpp, $(OBJS_DIR)/%.o, $(SRCS))
@@ -41,8 +49,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-debug: CXXFLAGS += -DDEBUG
-debug: re
 
 -include $(DEPS)

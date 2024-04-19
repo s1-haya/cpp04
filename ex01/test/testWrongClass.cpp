@@ -4,39 +4,39 @@
 void testTitle(const std::string title);
 
 /*
-test: WrongAnimal, WrongCat 
-output getType, makeSound()
+test: WrongAnimal, WrongCat
+output getType, makeSound( void )
 
 expected: the WrongCat should output the WrongAnimal sound.
 ex) WrongAnimal: WrongAnimal Sound!
     WrongCat   : WrongAnimal Sound!
 */
 
-void testAllocateWrongVer() {
-	testTitle("Allocate Correct Wrong Class");
-	const WrongAnimal* newAnimal = new WrongAnimal();
-	std::cout << newAnimal->getType() << " ";
-	newAnimal->makeSound();
-	delete(newAnimal);
+void testAllocateWrongVer(void) {
+  testTitle("Allocate Correct Wrong Class");
+  const WrongAnimal *newAnimal = new WrongAnimal(void);
+  std::cout << newAnimal->getType(void) << " ";
+  newAnimal->makeSound(void);
+  delete (newAnimal);
 
-	const WrongAnimal* newCat = new WrongCat();
-	std::cout << newCat->getType() << " ";
-	newCat->makeSound();
-	delete(newCat);
+  const WrongAnimal *newCat = new WrongCat(void);
+  std::cout << newCat->getType(void) << " ";
+  newCat->makeSound(void);
+  delete (newCat);
 }
 
-void testNotAllocateWrongVer() {
-	testTitle("Not Allocate Correct Wrong Class");
-	WrongAnimal animal;
-	std::cout << animal.getType() << " ";
-	animal.makeSound();
+void testNotAllocateWrongVer(void) {
+  testTitle("Not Allocate Correct Wrong Class");
+  WrongAnimal animal;
+  std::cout << animal.getType(void) << " ";
+  animal.makeSound(void);
 
-	WrongCat cat;
-	std::cout << cat.getType() << " ";
-	cat.makeSound();
+  WrongCat cat;
+  std::cout << cat.getType(void) << " ";
+  cat.makeSound(void);
 }
 
-void testWrongClass() {
-	testAllocateWrongVer();
-	testNotAllocateWrongVer();
+void testWrongClass(void) {
+  testAllocateWrongVer(void);
+  testNotAllocateWrongVer(void);
 }

@@ -1,12 +1,12 @@
 #include <iostream>
 
-void testAbstract();
-void testAnimalClass();
-void testBrainClass();
+void testAbstract(void);
+void testAnimalClass(void);
+void testBrainClass(void);
 
-void runTest() {
-	testAbstract();
-	testAnimalClass();
-	testBrainClass();
-	std::system("leaks -q polymorphism");
+void runTest(void) {
+  testAbstract(void);
+  testAnimalClass(void);
+  testBrainClass(void);
+  std::system("leaks -q polymorphism");
 }

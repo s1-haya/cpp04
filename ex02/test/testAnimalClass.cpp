@@ -2,7 +2,7 @@
 #include "Dog.hpp"
 
 void testTitle(const std::string title);
-void testJudgeString(const std::string& expected, const std::string& output);
+void testJudgeString(const std::string &expected, const std::string &output);
 
 #define RED "\x1B[31m"
 #define GREEN "\x1B[32m"
@@ -17,49 +17,49 @@ test:
 
 #define SIZE 5
 
-const AAnimal** newAnimalClass() {
-	const AAnimal** animals = new const AAnimal*[SIZE + SIZE];
-	for (size_t i = 0; i < SIZE; i++) {
-		animals[i] = new Cat();
-	}
-	for (size_t i = 0; i < SIZE; i++) {
-		animals[i + SIZE] = new Dog();
-	}
-	return (animals);
+const AAnimal **newAnimalClass(void) {
+  const AAnimal **animals = new const AAnimal *[SIZE + SIZE];
+  for (size_t i = 0; i < SIZE; i++) {
+    animals[i] = new Cat(void);
+  }
+  for (size_t i = 0; i < SIZE; i++) {
+    animals[i + SIZE] = new Dog(void);
+  }
+  return (animals);
 }
 
-void deleteAnimalClass( const AAnimal** animals ) {
-	for (size_t i = 0; i < (SIZE + SIZE); i++) {
-		delete animals[i];
-	}
-	delete [] animals;
+void deleteAnimalClass(const AAnimal **animals) {
+  for (size_t i = 0; i < (SIZE + SIZE); i++) {
+    delete animals[i];
+  }
+  delete[] animals;
 }
 
-void testCopyConstructorInAnimalClass() {
-	testTitle("Animal Copy Constructor");
-	AAnimal* cat = new Cat();
-	AAnimal* tmpCat(cat);
-	delete cat;
-	std::cout << "tmp cat: " << tmpCat->getType() << std::endl;
+void testCopyConstructorInAnimalClass(void) {
+  testTitle("Animal Copy Constructor");
+  AAnimal *cat = new Cat(void);
+  AAnimal *tmpCat(cat);
+  delete cat;
+  std::cout << "tmp cat: " << tmpCat->getType(void) << std::endl;
 }
 
-void testCopyAssignmentOperatorInAnimalClass() {
-	testTitle("Animal Copy Assignment Operator");
-	Cat* cat = new Cat();
-	Cat* tmpCat = new Cat();
-	*tmpCat = *cat;
-	delete cat;
-	delete tmpCat;
+void testCopyAssignmentOperatorInAnimalClass(void) {
+  testTitle("Animal Copy Assignment Operator");
+  Cat *cat = new Cat(void);
+  Cat *tmpCat = new Cat(void);
+  *tmpCat = *cat;
+  delete cat;
+  delete tmpCat;
 }
 
-void testAnimalClass() {
-	testTitle("Allocate Animal Class");
-	const AAnimal** animals = newAnimalClass();
-	for (size_t i = 0; i < (SIZE + SIZE); i++) {
-		std::cout << animals[i]->getType();
-		animals[i]->makeSound();
-	}
-	deleteAnimalClass(animals);
-	testCopyConstructorInAnimalClass();
-	testCopyAssignmentOperatorInAnimalClass();
+void testAnimalClass(void) {
+  testTitle("Allocate Animal Class");
+  const AAnimal **animals = newAnimalClass(void);
+  for (size_t i = 0; i < (SIZE + SIZE); i++) {
+    std::cout << animals[i]->getType(void);
+    animals[i]->makeSound(void);
+  }
+  deleteAnimalClass(animals);
+  testCopyConstructorInAnimalClass(void);
+  testCopyAssignmentOperatorInAnimalClass(void);
 }

@@ -3,17 +3,18 @@
 
 #include <iostream>
 
-class Animal{
+class Animal {
 protected:
-	std::string type_;
+  std::string type_;
+
 public:
-	Animal();
-	Animal( const Animal& other );
-	Animal& operator=( const Animal& other );
-	virtual ~Animal();
-	const std::string& getType() const;
-	void setType( const std::string& type );
-	virtual void makeSound() const;
+  Animal(void);
+  Animal(const Animal &other);
+  Animal &operator=(const Animal &other);
+  virtual ~Animal(void);
+  const std::string &getType(void) const;
+  void setType(const std::string &type);
+  virtual void makeSound(void) const;
 };
 
 #endif

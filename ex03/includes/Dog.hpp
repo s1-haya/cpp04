@@ -8,11 +8,11 @@ class Dog: public AAnimal{
 private:
 	Brain* brain_;
 public:
-	Dog();
+	Dog( void );
 	Dog( const Dog& other );
 	Dog& operator=( const Dog& other );
-	~Dog();
-	void makeSound() const;
+	~Dog( void );
+	void makeSound( void ) const;
 };
 
 #endif

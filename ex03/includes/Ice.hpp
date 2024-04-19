@@ -5,11 +5,12 @@
 
 class Ice: public AMateria{
 public:
-	Ice();
+	Ice( void );
 	Ice( const Ice& other );
 	Ice& operator=( const Ice& other );
-	~Ice();
-	Ice* clone() const = 0;
+	~Ice( void );
+	AMateria* clone( void ) const;
+	void use( ICharacter& target );
 };
 
 #endif

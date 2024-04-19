@@ -1,19 +1,20 @@
-#ifndef EX02_ABSTRACTANIMAL_HPP_
-#define EX02_ABSTRACTANIMAL_HPP_
+#ifndef EX02_AANIMAL_HPP_
+#define EX02_AANIMAL_HPP_
 
 #include <iostream>
 
-class AAnimal{
+class AAnimal {
 protected:
-	std::string type_;
+  std::string type_;
+
 public:
-	AAnimal();
-	AAnimal( const AAnimal& other );
-	virtual AAnimal& operator=( const AAnimal& other );
-	virtual ~AAnimal() = 0;
-	const std::string& getType() const;
-	void setType( const std::string& type );
-	virtual void makeSound() const = 0;
+  AAnimal(void);
+  AAnimal(const AAnimal &other);
+  virtual AAnimal &operator=(const AAnimal &other);
+  virtual ~AAnimal(void) = 0;
+  const std::string &getType(void) const;
+  void setType(const std::string &type);
+  virtual void makeSound(void) const = 0;
 };
 
 #endif

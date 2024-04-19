@@ -3,13 +3,13 @@
 
 #include "Animal.hpp"
 
-class Cat: public Animal{
+class Cat : public Animal {
 public:
-	Cat();
-	Cat( const Cat& other );
-	Cat& operator=( const Cat& other );
-	~Cat();
-	void makeSound() const;
+  Cat(void);
+  Cat(const Cat &other);
+  Cat &operator=(const Cat &other);
+  ~Cat(void);
+  void makeSound(void) const;
 };
 
 #endif

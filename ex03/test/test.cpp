@@ -1,8 +1,12 @@
 #include <iostream>
 
-void testAbstract();
+void testCharacterBehavior( void );
+void testMateriaBehavior( void );
+void testMateriaSource( void );
 
-void runTest() {
-	testAbstract();
-	system("leaks -q practice_polymorphism");
+void runTest( void ) {
+	testCharacterBehavior();
+	testMateriaBehavior();
+	testMateriaSource();
+	system("leaks -q practice");
 }

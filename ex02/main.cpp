@@ -1,7 +1,6 @@
-void runTest();
+void runTest(void);
 
-int main(void)
-{
-	runTest();
-	return (0);
+int main(void) {
+  runTest(void);
+  return (0);
 }

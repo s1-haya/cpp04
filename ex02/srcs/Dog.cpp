@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 
-Dog::Dog() : AAnimal(), brain_(new Brain()) {
+Dog::Dog( void ) : AAnimal( void ), brain_(new Brain( void )) {
 	this->type_  = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
 }
@@ -18,11 +18,11 @@ Dog& Dog::operator=( const Dog& other ) {
 	return (*this);
 }
 
-Dog::~Dog() {
+Dog::~Dog( void ) {
 	delete this->brain_;
 	std::cout << "Dog destructor called" << std::endl;
 }
 
-void Dog::makeSound() const {
+void Dog::makeSound( void ) const {
 	std::cout << "Yap! Yap! Yap!" << std::endl;
 }

@@ -7,13 +7,13 @@ class AAnimal{
 protected:
 	std::string type_;
 public:
-	AAnimal();
+	AAnimal( void );
 	AAnimal( const AAnimal& other );
 	virtual AAnimal& operator=( const AAnimal& other );
-	virtual ~AAnimal() = 0;
-	std::string getType() const;
+	virtual ~AAnimal( void ) = 0;
+	std::string getType( void ) const;
 	void setType( const std::string& type );
-	virtual void makeSound() const = 0;
+	virtual void makeSound( void ) const = 0;
 };
 
 #endif

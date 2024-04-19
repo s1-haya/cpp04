@@ -1,27 +1,27 @@
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal() : type_("Default type") {
+AAnimal::AAnimal( void ) : type_("default") {
 	std::cout << "AAnimal default constructor called" << std::endl; 
 }
 
 AAnimal::AAnimal( const AAnimal& other ) {
+	this->type_ = other.type_;
 	std::cout << "AAnimal copy constructor called" << std::endl;
-	*this = other;
 }
 
 AAnimal& AAnimal::operator=( const AAnimal& other ) {
-	std::cout << "AAnimal copy assignment operator called" << std::endl; 
 	if (this != &other) {
 		this->type_ = other.type_;
 	}
+	std::cout << "AAnimal copy assignment operator called" << std::endl; 
 	return (*this);
 }
 
-AAnimal::~AAnimal() {
+AAnimal::~AAnimal( void ) {
 	std::cout << "AAnimal destructor called" << std::endl; 
 }
 
-std::string AAnimal::getType() const {
+std::string AAnimal::getType( void ) const {
 	return (this->type_);
 }
 
