@@ -4,6 +4,13 @@
 
 void testTitle(const std::string title);
 
+/*
+test: MateriaBehavior
+ice and cure class
+- Whether clone is working correctly or not.
+- Whether use is working correctly or not.
+*/
+
 void testMateriaBehavior(void)
 {
 	testTitle("test materia behavior");

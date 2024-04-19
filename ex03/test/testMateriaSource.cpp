@@ -4,9 +4,12 @@
 
 void testTitle(const std::string title);
 
-// MateriaSourceクラスの仕様。Materiaを学習させるとき変数に入れるのではなく直接学習させる。
-//  理由はクラスでdeleteするか、外部でdeleteするか統一したかったため。
-//  もう一つはMateriaSourceは僕的に構造体に近いと思ったのでクラス内で削除した方がいいと思った。
+/*
+test: MateriaSource
+- Whether learnMateria is working correctly or not.
+- Whether createMateria is working correctly or not.
+*/
+
 void testMateriaSource(void)
 {
 	testTitle("test materia source");

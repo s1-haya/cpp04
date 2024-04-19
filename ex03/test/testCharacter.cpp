@@ -5,6 +5,14 @@
 
 void testTitle(const std::string title);
 
+/*
+test: CharacterBehavior
+- Whether equip is working correctly or not.
+- Whether unequip is working correctly or not.
+- Whether use is working correctly or not.
+*/
+
+
 void testCharacterBehavior(void)
 {
   testTitle("test character equip");

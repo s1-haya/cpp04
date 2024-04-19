@@ -47,6 +47,6 @@ test: re
 	./$(NAME) | grep -v called
 
 leak: re
-	valgrind --leak-check=full ./$(NAME)
+	valgrind --leak-check=full $(NAME)
 
 -include $(DEPS)
