@@ -1,10 +1,11 @@
 #include <iostream>
 
-void testCorrectClass(void);
-void testWrongClass(void);
+void testCorrectclass(void);
+void testWrongclass(void);
 
-void runTest(void) {
-  testCorrectClass(void);
-  testWrongClass(void);
+void runTest(void)
+{
+  testCorrectclass();
+  testWrongclass();
   std::system("leaks -q polymorphism");
 }

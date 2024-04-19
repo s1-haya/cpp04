@@ -17,44 +17,52 @@ test:
 
 #define SIZE 5
 
-const Animal **newAnimalClass(void) {
+const Animal **newAnimalclass(void)
+{
   const Animal **animals = new const Animal *[SIZE + SIZE];
-  for (size_t i = 0; i < SIZE; i++) {
-    animals[i] = new Cat(void);
+  for (size_t i = 0; i < SIZE; i++)
+  {
+    animals[i] = new Cat();
   }
-  for (size_t i = 0; i < SIZE; i++) {
-    animals[i + SIZE] = new Dog(void);
+  for (size_t i = 0; i < SIZE; i++)
+  {
+    animals[i + SIZE] = new Dog();
   }
   return (animals);
 }
 
-void deleteAnimalClass(const Animal **animals) {
-  for (size_t i = 0; i < (SIZE + SIZE); i++) {
+void deleteAnimalclass(const Animal **animals)
+{
+  for (size_t i = 0; i < (SIZE + SIZE); i++)
+  {
     delete animals[i];
   }
   delete[] animals;
 }
 
-void testAllocateCorrectVer(void) {
-  testTitle("Allocate Correct Class");
-  const Animal **animals = newAnimalClass(void);
-  for (size_t i = 0; i < (SIZE + SIZE); i++) {
-    std::cout << animals[i]->getType(void);
-    animals[i]->makeSound(void);
+void testAllocateCorrectVer(void)
+{
+  testTitle("Allocate Correct class");
+  const Animal **animals = newAnimalclass();
+  for (size_t i = 0; i < (SIZE + SIZE); i++)
+  {
+    std::cout << animals[i]->getType();
+    animals[i]->makeSound();
   }
-  deleteAnimalClass(animals);
+  deleteAnimalclass(animals);
 }
 
 /*
 test:
-Brain Class
+Brain class
 - Whether << operator is working correctly or not.
 - Whether the array std::string is correctly filled.
 - Whether setIdea is working correctly or not.
 */
 
-void testBrainClass(void) {
-  testTitle("Brain Class");
+void testBrainclass(void)
+{
+  testTitle("Brain class");
   Brain brain;
   std::cout << "Ideas: " << std::endl;
   testJudgeString("\0", brain.getIdea(100));
@@ -67,7 +75,8 @@ void testBrainClass(void) {
   std::cout << brain << std::endl;
 }
 
-void testCorrectClass(void) {
-  testBrainClass(void);
-  testAllocateCorrectVer(void);
+void testCorrectclass(void)
+{
+  testBrainclass();
+  testAllocateCorrectVer();
 }

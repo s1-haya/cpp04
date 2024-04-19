@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-class AAnimal {
+class AAnimal
+{
 protected:
   std::string type_;
 

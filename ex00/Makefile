@@ -14,8 +14,8 @@ SRCS := main.cpp\
 TEST_DIR := test
 SRCS += $(TEST_DIR)/test.cpp\
 		$(TEST_DIR)/testTitle.cpp\
-		$(TEST_DIR)/testCorrectClass.cpp\
-		$(TEST_DIR)/testWrongClass.cpp\
+		$(TEST_DIR)/testCorrectclass.cpp\
+		$(TEST_DIR)/testWrongclass.cpp\
 
 OBJS_DIR := objs
 OBJS := $(patsubst %.cpp, $(OBJS_DIR)/%.o, $(SRCS))
@@ -42,5 +42,8 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+test: re
+	./$(NAME) | grep -v called
 
 -include $(DEPS)

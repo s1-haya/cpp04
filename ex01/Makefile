@@ -44,4 +44,7 @@ fclean: clean
 
 re: fclean all
 
+test: re
+	./$(NAME) | grep -v called
+
 -include $(DEPS)

@@ -5,7 +5,8 @@
 
 #define MAX_IDEAS 100
 
-class Brain {
+class Brain
+{
 private:
   std::string ideas_[MAX_IDEAS];
 

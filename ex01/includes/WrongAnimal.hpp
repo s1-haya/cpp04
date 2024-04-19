@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-class WrongAnimal {
+class WrongAnimal
+{
 protected:
   std::string type_;
 

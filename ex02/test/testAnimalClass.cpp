@@ -17,49 +17,58 @@ test:
 
 #define SIZE 5
 
-const AAnimal **newAnimalClass(void) {
+const AAnimal **newAnimalclass(void)
+{
   const AAnimal **animals = new const AAnimal *[SIZE + SIZE];
-  for (size_t i = 0; i < SIZE; i++) {
-    animals[i] = new Cat(void);
+  for (size_t i = 0; i < SIZE; i++)
+  {
+    animals[i] = new Cat();
   }
-  for (size_t i = 0; i < SIZE; i++) {
-    animals[i + SIZE] = new Dog(void);
+  for (size_t i = 0; i < SIZE; i++)
+  {
+    animals[i + SIZE] = new Dog();
   }
   return (animals);
 }
 
-void deleteAnimalClass(const AAnimal **animals) {
-  for (size_t i = 0; i < (SIZE + SIZE); i++) {
+void deleteAnimalclass(const AAnimal **animals)
+{
+  for (size_t i = 0; i < (SIZE + SIZE); i++)
+  {
     delete animals[i];
   }
   delete[] animals;
 }
 
-void testCopyConstructorInAnimalClass(void) {
+void testCopyConstructorInAnimalclass(void)
+{
   testTitle("Animal Copy Constructor");
-  AAnimal *cat = new Cat(void);
+  AAnimal *cat = new Cat();
   AAnimal *tmpCat(cat);
   delete cat;
-  std::cout << "tmp cat: " << tmpCat->getType(void) << std::endl;
+  std::cout << "tmp cat: " << tmpCat->getType() << std::endl;
 }
 
-void testCopyAssignmentOperatorInAnimalClass(void) {
+void testCopyAssignmentOperatorInAnimalclass(void)
+{
   testTitle("Animal Copy Assignment Operator");
-  Cat *cat = new Cat(void);
-  Cat *tmpCat = new Cat(void);
+  Cat *cat = new Cat();
+  Cat *tmpCat = new Cat();
   *tmpCat = *cat;
   delete cat;
   delete tmpCat;
 }
 
-void testAnimalClass(void) {
-  testTitle("Allocate Animal Class");
-  const AAnimal **animals = newAnimalClass(void);
-  for (size_t i = 0; i < (SIZE + SIZE); i++) {
-    std::cout << animals[i]->getType(void);
-    animals[i]->makeSound(void);
+void testAnimalclass(void)
+{
+  testTitle("Allocate Animal class");
+  const AAnimal **animals = newAnimalclass();
+  for (size_t i = 0; i < (SIZE + SIZE); i++)
+  {
+    std::cout << animals[i]->getType();
+    animals[i]->makeSound();
   }
-  deleteAnimalClass(animals);
-  testCopyConstructorInAnimalClass(void);
-  testCopyAssignmentOperatorInAnimalClass(void);
+  deleteAnimalclass(animals);
+  testCopyConstructorInAnimalclass();
+  testCopyAssignmentOperatorInAnimalclass();
 }

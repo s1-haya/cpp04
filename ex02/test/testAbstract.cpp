@@ -11,7 +11,8 @@ test:
 - Abstract class error case
 */
 
-void testAbstract(void) {
+void testAbstract(void)
+{
   testTitle("Abstract");
   // error: return type 'AAnimal' is an abstract class
   // AAnimal animal( void );
@@ -26,8 +27,8 @@ void testAbstract(void) {
   // ok: reference, pointer
   AAnimal &i(AAnimal &);
   AAnimal *animal;
-  animal = new Cat(void);
+  animal = new Cat();
   std::cout << animal << std::endl;
-  animal->makeSound(void);
+  animal->makeSound();
   delete animal;
 }

@@ -12,8 +12,9 @@ ex) WrongAnimal: WrongAnimal Sound!
     WrongCat   : WrongAnimal Sound!
 */
 
-void testAllocateWrongVer(void) {
-  testTitle("Allocate Correct Wrong Class");
+void testAllocateWrongVer(void)
+{
+  testTitle("Allocate Correct Wrong class");
   const WrongAnimal *newAnimal = new WrongAnimal(void);
   std::cout << newAnimal->getType(void) << " ";
   newAnimal->makeSound(void);
@@ -25,8 +26,9 @@ void testAllocateWrongVer(void) {
   delete (newCat);
 }
 
-void testNotAllocateWrongVer(void) {
-  testTitle("Not Allocate Correct Wrong Class");
+void testNotAllocateWrongVer(void)
+{
+  testTitle("Not Allocate Correct Wrong class");
   WrongAnimal animal;
   std::cout << animal.getType(void) << " ";
   animal.makeSound(void);
@@ -36,7 +38,8 @@ void testNotAllocateWrongVer(void) {
   cat.makeSound(void);
 }
 
-void testWrongClass(void) {
+void testWrongclass(void)
+{
   testAllocateWrongVer(void);
   testNotAllocateWrongVer(void);
 }

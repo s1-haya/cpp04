@@ -3,20 +3,21 @@
 
 void testTitle(const std::string title);
 void testJudgeString(const std::string &expected, const std::string &output);
-void testCopyConstructorInBrainClass(void);
-void testCopyAssignmentOperatorInBrainClass(void);
+void testCopyConstructorInBrainclass(void);
+void testCopyAssignmentOperatorInBrainclass(void);
 
 /*
 test:
-Brain Class
+Brain class
 - Whether << operator is working correctly or not.
 - Whether the array std::string is correctly filled.
 - Whether setIdea is working correctly or not.
 - Whether Orthodox Canonical Form is working correctly or not
 */
 
-void testBrainClass(void) {
-  testTitle("Brain Class");
+void testBrainclass(void)
+{
+  testTitle("Brain class");
   Brain brain;
   testJudgeString("\0", brain.getIdea(100));
   testJudgeString("\0", brain.getIdea(-1));
@@ -26,11 +27,12 @@ void testBrainClass(void) {
   brain.setIdea("\033[34mjay z\033[0m", 100);
   brain.setIdea("\033[34mjay z\033[0m", -1);
   std::cout << brain << std::endl;
-  testCopyConstructorInBrainClass(void);
-  testCopyAssignmentOperatorInBrainClass(void);
+  testCopyConstructorInBrainclass();
+  testCopyAssignmentOperatorInBrainclass();
 }
 
-void testCopyConstructorInBrainClass(void) {
+void testCopyConstructorInBrainclass(void)
+{
   testTitle("Brain Copy Constructor");
   Brain brain;
   brain.setIdea("\033[31mj cole\033[0m", 0);
@@ -39,7 +41,8 @@ void testCopyConstructorInBrainClass(void) {
   std::cout << copyBrain.getIdea(99) << std::endl;
 }
 
-void testCopyAssignmentOperatorInBrainClass(void) {
+void testCopyAssignmentOperatorInBrainclass(void)
+{
   testTitle("Brain Copy Assignment Operator");
   Brain brain;
   brain.setIdea("\033[31mj cole\033[0m", 0);

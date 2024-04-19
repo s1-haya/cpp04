@@ -1,16 +1,20 @@
 #include "Cat.hpp"
 
-Cat::Cat(void) : AAnimal(void), brain_(new Brain(void)) {
+Cat::Cat(void) : AAnimal(), brain_(new Brain())
+{
   this->type_ = "Cat";
   std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &other) : AAnimal(other), brain_(new Brain(*other.brain_)) {
+Cat::Cat(const Cat &other) : AAnimal(other), brain_(new Brain(*other.brain_))
+{
   std::cout << "Cat copy constructor called" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &other) {
-  if (this != &other) {
+Cat &Cat::operator=(const Cat &other)
+{
+  if (this != &other)
+  {
     AAnimal::operator=(other);
     *this->brain_ = *other.brain_;
   }
@@ -18,11 +22,13 @@ Cat &Cat::operator=(const Cat &other) {
   return (*this);
 }
 
-Cat::~Cat(void) {
+Cat::~Cat(void)
+{
   std::cout << "Cat destructor called" << std::endl;
   delete this->brain_;
 }
 
-void Cat::makeSound(void) const {
+void Cat::makeSound(void) const
+{
   std::cout << "Meow! Meow... Hiss!" << std::endl;
 }

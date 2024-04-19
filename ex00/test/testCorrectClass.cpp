@@ -10,40 +10,43 @@ test:
 - the Cat’s type will be initialized to "Cat"
 */
 
-void testAllocateCorrectVer(void) {
-  testTitle("Allocate Correct Class");
-  const Animal *newAnimal = new Animal(void);
-  std::cout << newAnimal->getType(void) << " ";
-  newAnimal->makeSound(void);
+void testAllocateCorrectVer(void)
+{
+  testTitle("Allocate Correct class");
+  const Animal *newAnimal = new Animal();
+  std::cout << newAnimal->getType() << " ";
+  newAnimal->makeSound();
   delete (newAnimal);
 
-  const Animal *newCat = new Cat(void);
-  std::cout << newCat->getType(void) << " ";
-  newCat->makeSound(void);
+  const Animal *newCat = new Cat();
+  std::cout << newCat->getType() << " ";
+  newCat->makeSound();
   delete (newCat);
 
-  const Animal *newDog = new Dog(void);
-  std::cout << newDog->getType(void) << " ";
-  newDog->makeSound(void);
+  const Animal *newDog = new Dog();
+  std::cout << newDog->getType() << " ";
+  newDog->makeSound();
   delete (newDog);
 }
 
-void testNotAllocateCorrectVer(void) {
-  testTitle("Not Allocate Correct Class");
+void testNotAllocateCorrectVer(void)
+{
+  testTitle("Not Allocate Correct class");
   Animal animal;
-  std::cout << animal.getType(void) << " ";
-  animal.makeSound(void);
+  std::cout << animal.getType() << " ";
+  animal.makeSound();
 
   Cat cat;
-  std::cout << cat.getType(void) << " ";
-  cat.makeSound(void);
+  std::cout << cat.getType() << " ";
+  cat.makeSound();
 
   Dog dog;
-  std::cout << dog.getType(void) << " ";
-  dog.makeSound(void);
+  std::cout << dog.getType() << " ";
+  dog.makeSound();
 }
 
-void testCorrectClass(void) {
-  testNotAllocateCorrectVer(void);
-  testAllocateCorrectVer(void);
+void testCorrectclass(void)
+{
+  testAllocateCorrectVer();
+  testNotAllocateCorrectVer();
 }
