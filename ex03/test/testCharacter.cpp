@@ -5,7 +5,8 @@
 
 void testTitle(const std::string title);
 
-void testCharacterBehavior(void) {
+void testCharacterBehavior(void)
+{
   testTitle("test character equip");
   ICharacter *cole = new Character("J COLE");
   AMateria *ice = new Ice();
@@ -25,7 +26,8 @@ void testCharacterBehavior(void) {
   delete tmp;
 
   testTitle("test character unequip & use");
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < 4; i++)
+  {
     cole->use(i, *cole);
   }
   cole->unequip(0);

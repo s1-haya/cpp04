@@ -4,20 +4,23 @@
 
 void testTitle(const std::string title);
 
-void testMateriaBehavior( void ) {
+void testMateriaBehavior(void)
+{
 	testTitle("test materia behavior");
-	AMateria* ice = new Ice();
-	AMateria* cure = new Cure();
-	AMateria* iceClone = ice->clone();
-	AMateria* cureClone = cure->clone();
-	if (ice != iceClone) {
+	AMateria *ice = new Ice();
+	AMateria *cure = new Cure();
+	AMateria *iceClone = ice->clone();
+	AMateria *cureClone = cure->clone();
+	if (ice != iceClone)
+	{
 		std::cout << "OK" << std::endl;
 		std::cout << "Ice = " << ice << std::endl;
 		std::cout << "IceClone = " << iceClone << std::endl;
 	}
 	else
 		std::cout << "KO" << std::endl;
-	if (cure != cureClone) {
+	if (cure != cureClone)
+	{
 		std::cout << "OK" << std::endl;
 		std::cout << "Cure = " << cure << std::endl;
 		std::cout << "CureClone = " << cureClone << std::endl;
@@ -25,7 +28,7 @@ void testMateriaBehavior( void ) {
 	else
 		std::cout << "KO" << std::endl;
 
-	ICharacter* me = new Character("A");
+	ICharacter *me = new Character("A");
 	ice->use(*me);
 	iceClone->use(*me);
 	cure->use(*me);

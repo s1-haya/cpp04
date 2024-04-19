@@ -3,17 +3,19 @@
 
 #include <iostream>
 
-class WrongAnimal{
+class WrongAnimal
+{
 protected:
 	std::string type_;
+
 public:
-	WrongAnimal( void );
-	WrongAnimal( const WrongAnimal& other );
-	WrongAnimal& operator=( const WrongAnimal& other );
-	virtual ~WrongAnimal( void );
-	std::string getType( void ) const;
-	void setType( std::string type );
-	virtual void makeSound( void ) const;
+	WrongAnimal(void);
+	WrongAnimal(const WrongAnimal &other);
+	WrongAnimal &operator=(const WrongAnimal &other);
+	virtual ~WrongAnimal(void);
+	std::string getType(void) const;
+	void setType(std::string type);
+	virtual void makeSound(void) const;
 };
 
 #endif
