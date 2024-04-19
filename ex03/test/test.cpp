@@ -8,5 +8,4 @@ void runTest( void ) {
 	testCharacterBehavior();
 	testMateriaBehavior();
 	testMateriaSource();
-	system("leaks -q practice");
 }

@@ -2,27 +2,27 @@
 
 WrongCat::WrongCat(void) : WrongAnimal()
 {
-	std::cout << "WrongCat default constructor called" << std::endl;
-	this->setType("WrongCat");
+  std::cout << "WrongCat default constructor called" << std::endl;
+  this->setType("WrongCat");
 }
 
-WrongCat::WrongCat(const WrongCat &other)
+WrongCat::WrongCat(const WrongCat &other): WrongAnimal()
 {
-	std::cout << "WrongCat copy constructor called" << std::endl;
-	*this = other;
+  std::cout << "WrongCat copy constructor called" << std::endl;
+  *this = other;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &other)
 {
-	std::cout << "WrongCat copy assignment operator called" << std::endl;
-	if (this != &other)
-	{
-		this->type_ = other.type_;
-	}
-	return (*this);
+  std::cout << "WrongCat copy assignment operator called" << std::endl;
+  if (this != &other)
+  {
+    this->type_ = other.type_;
+  }
+  return (*this);
 }
 
 WrongCat::~WrongCat(void)
 {
-	std::cout << "WrongCat destructor called" << std::endl;
+  std::cout << "WrongCat destructor called" << std::endl;
 }

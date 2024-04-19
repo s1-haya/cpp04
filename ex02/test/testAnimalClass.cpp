@@ -45,8 +45,8 @@ void testCopyConstructorInAnimalclass(void)
   testTitle("Animal Copy Constructor");
   AAnimal *cat = new Cat();
   AAnimal *tmpCat(cat);
-  delete cat;
   std::cout << "tmp cat: " << tmpCat->getType() << std::endl;
+  delete cat;
 }
 
 void testCopyAssignmentOperatorInAnimalclass(void)

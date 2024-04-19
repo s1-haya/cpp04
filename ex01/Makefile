@@ -25,7 +25,7 @@ DEPS := $(OBJS:%.o=%.d)
 
 INCLUDES := -I./includes
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test leak
 
 all: $(NAME)
 
@@ -46,5 +46,9 @@ re: fclean all
 
 test: re
 	./$(NAME) | grep -v called
+
+
+leak: re
+	valgrind --leak-check=full $(NAME)
 
 -include $(DEPS)

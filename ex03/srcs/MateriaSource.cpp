@@ -75,7 +75,7 @@ void MateriaSource::learnMateria(AMateria *materia)
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
 	int i = 0;
-	while ((this->materias_)[i] && i < MAX_MATERIAS)
+	while (i < MAX_MATERIAS && (this->materias_)[i])
 	{
 		if (((this->materias_)[i])->getType().compare(type) == 0)
 		{

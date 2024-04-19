@@ -9,5 +9,4 @@ void runTest(void)
   testAbstract();
   testAnimalclass();
   testBrainclass();
-  std::system("leaks -q polymorphism");
 }
